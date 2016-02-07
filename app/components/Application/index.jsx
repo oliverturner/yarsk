@@ -16,8 +16,8 @@ export default class Application extends React.Component {
         <Header />
 
         <main className={styles.body}>
-          <p>Seems like creating your own React starter kit is a right of passage. So, here's mine.</p>
-          <p>For more information, see the<a href="https://github.com/bradleyboy/yarsk#yarsk">Readme</a>.</p>
+          <p>Seems like creating your own React starter kit is a rite of passage. So, here's mine.</p>
+          <p>For more information, see the <a href="https://github.com/bradleyboy/yarsk#yarsk">Readme</a>.</p>
         </main>
       </div>
     </div>;
