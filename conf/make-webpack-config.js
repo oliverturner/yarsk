@@ -1,5 +1,6 @@
 var fs = require('fs');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -11,7 +12,7 @@ module.exports = function(options) {
   options.lint = fs.existsSync(__dirname + '/../.eslintrc') && options.lint !== false;
 
   var localIdentName = options.production ? '[hash:base64]' : '[path]-[local]-[hash:base64:5]';
-  var cssLoaders = 'style!css?localIdentName=' + localIdentName + '!autoprefixer?browsers=last 2 versions';
+  var cssLoaders = 'style!css?module&localIdentName=' + localIdentName + '!postcss?browsers=last 2 versions';
   var scssLoaders = cssLoaders + '!sass';
   var sassLoaders = scssLoaders + '?indentedSyntax=sass';
   var lessLoaders = cssLoaders + '!less';
@@ -22,8 +23,6 @@ module.exports = function(options) {
     scssLoaders = extractForProduction(scssLoaders);
     lessLoaders = extractForProduction(lessLoaders);
   }
-
-  var jsLoaders = ['babel'];
 
   return {
     entry: options.production ? './app/index.jsx' : [
@@ -48,14 +47,9 @@ module.exports = function(options) {
       ] : [],
       loaders: [
         {
-          test: /\.js$/,
+          test: /\.jsx?$/,
           exclude: /node_modules/,
-          loaders: jsLoaders,
-        },
-        {
-          test: /\.jsx$/,
-          exclude: /node_modules/,
-          loaders: options.production ? jsLoaders : ['react-hot'].concat(jsLoaders),
+          loaders: ['babel'],
         },
         {
           test: /\.css$/,
@@ -117,5 +111,6 @@ module.exports = function(options) {
         template: './conf/tmpl.html',
       }),
     ],
+    postcss: [autoprefixer]
   };
 };
