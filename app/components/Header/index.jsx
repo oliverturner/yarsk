@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SubHeader from './subheader';
+
 /**
  * Import locally scoped styles using css-loader
  * See style.sass in this directory.
@@ -21,14 +23,7 @@ export default class Header extends React.Component {
 
       <div className={styles.wrap}>
         <h1 className={styles.title}>YARSK</h1>
-
-        <h2 className={styles.tagline}>
-          (<strong>Y</strong>et{' '}
-          <strong>A</strong>nother{' '}
-          <strong>R</strong>eact{' '}
-          <strong>S</strong>tarter{' '}
-          <strong>K</strong>it)
-        </h2>
+        <SubHeader>Yet Another React Starter Kit</SubHeader>
       </div>
     </header>;
   }
