@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SubHeader from './subheader';
+import SplitHeader from '../SplitHeader';
 
 /**
  * Import locally scoped styles using css-loader
@@ -23,7 +23,7 @@ export default class Header extends React.Component {
 
       <div className={styles.wrap}>
         <h1 className={styles.title}>YARSK</h1>
-        <SubHeader>Yet Another React Starter Kit</SubHeader>
+        <SplitHeader>Yet Another React Starter Kit</SplitHeader>
       </div>
     </header>;
   }
