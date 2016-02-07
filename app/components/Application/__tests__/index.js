@@ -3,8 +3,8 @@ import ReactTestUtils from 'react-addons-test-utils';
 import Application from '../index.jsx';
 import styles from '../style.sass';
 
-describe('Application', function() {
-  it('displays the component', function() {
+describe('Application', function () {
+  it('displays the component', function () {
     const application = ReactTestUtils.renderIntoDocument(
       <Application />
     );

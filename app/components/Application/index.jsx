@@ -10,14 +10,14 @@ import Header from '../Header';
 import styles from './style';
 
 export default class Application extends React.Component {
-  render() {
+  render () {
     return <div className={styles.main}>
       <div className={styles.wrap}>
         <Header />
 
         <main className={styles.body}>
           <p>Seems like creating your own React starter kit is a right of passage. So, here's mine.</p>
-          <p>For more information, see the <a href="https://github.com/bradleyboy/yarsk#yarsk">Readme</a>.</p>
+          <p>For more information, see the<a href="https://github.com/bradleyboy/yarsk#yarsk">Readme</a>.</p>
         </main>
       </div>
     </div>;

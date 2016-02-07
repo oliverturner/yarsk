@@ -11,23 +11,23 @@ import styles from './style';
 /**
  * Reference an image and get back a URL automatically via webpack.
  * webpack takes care of versioning, bundling for production, etc.
-*/
+ */
 import logoURL from './images/react-logo.svg';
 
 export default class Header extends React.Component {
-  render() {
+  render () {
     return <header className={styles.main}>
-      <img className={styles.logo} src={logoURL} height="125" />
+      <img className={styles.logo} src={logoURL} height="125"/>
 
       <div className={styles.wrap}>
         <h1 className={styles.title}>YARSK</h1>
 
         <h2 className={styles.tagline}>
           (<strong>Y</strong>et{' '}
-            <strong>A</strong>nother{' '}
-            <strong>R</strong>eact{' '}
-            <strong>S</strong>tarter{' '}
-            <strong>K</strong>it)
+          <strong>A</strong>nother{' '}
+          <strong>R</strong>eact{' '}
+          <strong>S</strong>tarter{' '}
+          <strong>K</strong>it)
         </h2>
       </div>
     </header>;

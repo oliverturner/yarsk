@@ -1,6 +1,6 @@
 var webpackConfig = require('./webpack.config.js');
 
-module.exports = function(options) {
+module.exports = function (options) {
   var karmaConfig = {
     frameworks: ['mocha', 'chai'],
 
@@ -17,7 +17,7 @@ module.exports = function(options) {
     },
 
     webpackMiddleware: {
-        noInfo: true,
+      noInfo: true,
     },
 
     reporters: ['mocha'],
@@ -46,8 +46,8 @@ module.exports = function(options) {
     karmaConfig.coverageReporter = {
       dir: '../coverage',
       reporters: options.coverageReporters || [
-        { type: 'text' },
-        { type: 'html' },
+        {type: 'text'},
+        {type: 'html'},
       ],
     };
 
